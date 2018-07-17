@@ -19,6 +19,8 @@ var onetitle = document.getElementById("onetitle");
 var onefooter = document.getElementById("onefooter")
 var softwaretitle = document.getElementById("softwaretitle");
 var softwarefooter = document.getElementById("softwarefooter")
+var teachingtitle = document.getElementById("teachingtitle");
+var teachingfooter = document.getElementById("teachingfooter")
 var EandDtitle = document.getElementById("EandDtitle");
 var EandDfooter = document.getElementById("EandDfooter")
 var CVtitle = document.getElementById("CVtitle");
@@ -35,6 +37,8 @@ var onestickyval = onetitle.getBoundingClientRect().top + window.scrollY;
 var oneunstickyval = onefooter.getBoundingClientRect().top + window.scrollY;
 var softwarestickyval = softwaretitle.getBoundingClientRect().top + window.scrollY;
 var softwareunstickyval = softwarefooter.getBoundingClientRect().top + window.scrollY;
+var teachingstickyval = teachingtitle.getBoundingClientRect().top + window.scrollY;
+var teachingunstickyval = teachingfooter.getBoundingClientRect().top + window.scrollY;
 var EandDstickyval = EandDtitle.getBoundingClientRect().top + window.scrollY;
 var EandDunstickyval = EandDfooter.getBoundingClientRect().top + window.scrollY;
 var CVstickyval = CVtitle.getBoundingClientRect().top + window.scrollY;
@@ -107,6 +111,18 @@ function stickyHeaders() {
         softwarefooter.classList.add("unstickyhead")
     } else {
         softwarefooter.classList.remove("unstickyhead");
+    }
+
+    if (window.pageYOffset >= teachingstickyval &&
+        window.pageYOffset <= teachingunstickyval) {
+        teachingtitle.classList.add("stickyhead");
+    } else {
+        teachingtitle.classList.remove("stickyhead");
+    }
+    if (window.pageYOffset >= teachingunstickyval) {
+        teachingfooter.classList.add("unstickyhead")
+    } else {
+        teachingfooter.classList.remove("unstickyhead");
     }
 
     if (window.pageYOffset >= EandDstickyval &&
