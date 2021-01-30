@@ -1,3 +1,4 @@
+
 // When the user scrolls the page, execute stickyHeaders 
 window.onscroll = function() {stickyHeaders()};
 window.addEventListener('resize', freshPage)
@@ -9,24 +10,32 @@ function freshPage() {
 
 // Get title names
 var introtitle = document.getElementById("introtitle");
+
+/* Not working when divs contain some content. I don't know why.
+   Supremely frustrating.
 var researchtitle = document.getElementById("researchtitle");
-var researchfooter = document.getElementById("researchfooter")
+var researchfooter = document.getElementById("researchfooter");
 var whyagetitle = document.getElementById("whyagetitle");
-var whyagefooter = document.getElementById("whyagefooter")
+var whyagefooter = document.getElementById("whyagefooter");
 var pubstitle = document.getElementById("pubstitle");
-var pubsfooter = document.getElementById("pubsfooter")
+var pubsfooter = document.getElementById("pubsfooter");
 var onetitle = document.getElementById("onetitle");
-var onefooter = document.getElementById("onefooter")
+var onefooter = document.getElementById("onefooter");
 var softwaretitle = document.getElementById("softwaretitle");
-var softwarefooter = document.getElementById("softwarefooter")
+var softwarefooter = document.getElementById("softwarefooter");
 var teachingtitle = document.getElementById("teachingtitle");
-var teachingfooter = document.getElementById("teachingfooter")
+var teachingfooter = document.getElementById("teachingfooter");
 var EandDtitle = document.getElementById("EandDtitle");
-var EandDfooter = document.getElementById("EandDfooter")
+var EandDfooter = document.getElementById("EandDfooter");
 var CVtitle = document.getElementById("CVtitle");
-var CVfooter = document.getElementById("CVfooter")
+var CVfooter = document.getElementById("CVfooter");
+*/
+
 // Get the offset position of the navbar
 var introstickyval = introtitle.getBoundingClientRect().top + window.scrollY;
+
+/* Not working when divs contain some content. I don't know why.
+   Supremely frustrating.
 var researchstickyval = researchtitle.getBoundingClientRect().top + window.scrollY;
 var researchunstickyval = researchfooter.getBoundingClientRect().top + window.scrollY;
 var whyagestickyval = whyagetitle.getBoundingClientRect().top + window.scrollY;
@@ -43,110 +52,113 @@ var EandDstickyval = EandDtitle.getBoundingClientRect().top + window.scrollY;
 var EandDunstickyval = EandDfooter.getBoundingClientRect().top + window.scrollY;
 var CVstickyval = CVtitle.getBoundingClientRect().top + window.scrollY;
 var CVunstickyval = CVfooter.getBoundingClientRect().top + window.scrollY;
-
+*/
 
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function stickyHeaders() {
-    if (window.pageYOffset >= introstickyval) {
+    var pageYoffset = window.scrollY
+    if (pageYoffset >= introstickyval) {
         introtitle.classList.add("stickyhead");
     } else {
         introtitle.classList.remove("stickyhead");
     }
 
-    if (window.pageYOffset >= researchstickyval &&
-        window.pageYOffset <= researchunstickyval) {
+/* Not working when divs contain some content. I don't know why.
+   Supremely frustrating.
+    if (pageYoffset >= researchstickyval &&
+        pageYoffset <= researchunstickyval) {
         researchtitle.classList.add("stickyhead");
     } else {
         researchtitle.classList.remove("stickyhead");
     }
-    if (window.pageYOffset >= researchunstickyval) {
+    if (pageYoffset >= researchunstickyval) {
         researchfooter.classList.add("unstickyhead")
     } else {
         researchfooter.classList.remove("unstickyhead");
     }
 
-    if (window.pageYOffset >= whyagestickyval &&
-        window.pageYOffset <= whyageunstickyval) {
+    if (pageYoffset >= whyagestickyval &&
+        pageYoffset <= whyageunstickyval) {
         whyagetitle.classList.add("stickyhead");
     } else {
         whyagetitle.classList.remove("stickyhead");
     }
-    if (window.pageYOffset >= whyageunstickyval) {
+    if (pageYoffset >= whyageunstickyval) {
         whyagefooter.classList.add("unstickyhead")
     } else {
         whyagefooter.classList.remove("unstickyhead");
     }
 
-    if (window.pageYOffset >= pubsstickyval &&
-        window.pageYOffset <= pubsunstickyval) {
+    if (pageYoffset >= pubsstickyval &&
+        pageYoffset <= pubsunstickyval) {
         pubstitle.classList.add("stickyhead");
     } else {
         pubstitle.classList.remove("stickyhead");
     }
-    if (window.pageYOffset >= pubsunstickyval) {
+    if (pageYoffset >= pubsunstickyval) {
         pubsfooter.classList.add("unstickyhead")
     } else {
         pubsfooter.classList.remove("unstickyhead");
     }
 
-    if (window.pageYOffset >= onestickyval &&
-        window.pageYOffset <= oneunstickyval) {
+    if (pageYoffset >= onestickyval &&
+        pageYoffset <= oneunstickyval) {
         onetitle.classList.add("stickyhead");
     } else {
         onetitle.classList.remove("stickyhead");
     }
-    if (window.pageYOffset >= oneunstickyval) {
+    if (pageYoffset >= oneunstickyval) {
         onefooter.classList.add("unstickyhead")
     } else {
         onefooter.classList.remove("unstickyhead");
     }
 
-    if (window.pageYOffset >= softwarestickyval &&
-        window.pageYOffset <= softwareunstickyval) {
+    if (pageYoffset >= softwarestickyval &&
+        pageYoffset <= softwareunstickyval) {
         softwaretitle.classList.add("stickyhead");
     } else {
         softwaretitle.classList.remove("stickyhead");
     }
-    if (window.pageYOffset >= softwareunstickyval) {
+    if (pageYoffset >= softwareunstickyval) {
         softwarefooter.classList.add("unstickyhead")
     } else {
         softwarefooter.classList.remove("unstickyhead");
     }
 
-    if (window.pageYOffset >= teachingstickyval &&
-        window.pageYOffset <= teachingunstickyval) {
+    if (pageYoffset >= teachingstickyval &&
+        pageYoffset <= teachingunstickyval) {
         teachingtitle.classList.add("stickyhead");
     } else {
         teachingtitle.classList.remove("stickyhead");
     }
-    if (window.pageYOffset >= teachingunstickyval) {
+    if (pageYoffset >= teachingunstickyval) {
         teachingfooter.classList.add("unstickyhead")
     } else {
         teachingfooter.classList.remove("unstickyhead");
     }
 
-    if (window.pageYOffset >= EandDstickyval &&
-        window.pageYOffset <= EandDunstickyval) {
+    if (pageYoffset >= EandDstickyval &&
+        pageYoffset <= EandDunstickyval) {
         EandDtitle.classList.add("stickyhead");
     } else {
         EandDtitle.classList.remove("stickyhead");
     }
-    if (window.pageYOffset >= EandDunstickyval) {
+    if (pageYoffset >= EandDunstickyval) {
         EandDfooter.classList.add("unstickyhead")
     } else {
         EandDfooter.classList.remove("unstickyhead");
     }
 
-    if (window.pageYOffset >= CVstickyval &&
-        window.pageYOffset <= CVunstickyval) {
+    if (pageYoffset >= CVstickyval &&
+        pageYoffset <= CVunstickyval) {
         CVtitle.classList.add("stickyhead");
     } else {
         CVtitle.classList.remove("stickyhead");
     }
-    if (window.pageYOffset >= CVunstickyval) {
+    if (pageYoffset >= CVunstickyval) {
         CVfooter.classList.add("unstickyhead")
     } else {
         CVfooter.classList.remove("unstickyhead");
     }
-
+*/
 }

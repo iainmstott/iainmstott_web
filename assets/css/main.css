@@ -15,6 +15,9 @@ font-family: 'Cormorant Garamond', serif;
 font-family: 'Playfair Display', serif;
 */
 
+/* Monospace fonts */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
 /*Icons*/
 @import url("font-awesome.min.css");
 
@@ -2183,19 +2186,21 @@ font-family: 'Playfair Display', serif;
 		-webkit-transition: all 0.2s ease-in-out;
 		-ms-transition: all 0.2s ease-in-out;
 		transition: all 0.2s ease-in-out;
-		background-color: #98c593;
+		background-color: #202420;
 		border: 0;
 		border-radius: 3.5em;
 		color: #fff;
 		cursor: pointer;
 		display: inline-block;
-		height: 3.5em;
-		line-height: 3.5em;
+		height: 2.5em;
+		line-height: 2.5em;
 		outline: 0;
-		padding: 0 2em 0 2em;
+		padding: 0 1em 0 1em;
 		position: relative;
 		text-align: center;
 		text-decoration: none;
+		font-family: inherit;
+		font-size: inherit;
 	}
 
 		input[type="button"].down,
@@ -2288,7 +2293,6 @@ font-family: 'Playfair Display', serif;
 
 		.box.style2 {
 			background: #f4f5f6;
-			background: rgba(255,255,255,1);
 			color: #39454b;
 			mix-blend-mode: screen;
 			padding: 2em 2em 2em 2em;
@@ -2848,6 +2852,28 @@ font-family: 'Playfair Display', serif;
 			-moz-osx-font-smoothing: grayscale;
 		}
 
+/*  left float text box */
+
+		.textboxright {
+			border-left: 1px solid black;
+			height: 100%;
+			float: right;
+			width: 33%;
+			padding: 0 0 0 16px;
+			text-align: justify;
+		}
+
+		.textboxleft {
+			border-right: 1px solid black;
+			margin-right: 24px;
+			height: 100%;
+			float: left;
+			width: 33%; 
+			padding: 0 16px 16px 0;
+			text-align: justify;
+		}
+
+
 /* Header */
 
 	#header {
@@ -2965,7 +2991,7 @@ font-family: 'Playfair Display', serif;
 		overflow: visible;
 		position: relative;
 		padding-top: 6em;
-		background: url("images/overlay.png"), url("../../images/intro.jpg");
+		background: url("images/overlay.png"), url("../../images/intro2.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, bottom center;
@@ -2981,8 +3007,8 @@ font-family: 'Playfair Display', serif;
 			position: relative;
 			top: 0;
 			z-index: 100;
-			height: 3em;
-			line-height: 3em;
+			height: 1.75em;
+			line-height: 1.75em;
 			margin-top: 0;
 			margin-bottom: 0;
 			padding: 0 16px 0 16px;
@@ -2998,6 +3024,22 @@ font-family: 'Playfair Display', serif;
 			border: 1px;
 		}
 
+		#introtitle a {
+			margin: 0;
+			font-weight: 400;
+			text-decoration: underline;
+			color: #f4f5f6;
+			background: none;
+			mix-blend-mode: none;
+		}
+		
+		#introtitle a:hover {
+			color: #0B0A09;
+			background: #f4f5f6;
+			mix-blend-mode: screen;
+			text-decoration: none;
+		}
+		
 	  /* name sticks in navbar when scrolling up */
 	#introtitle.stickyhead {
 		position: fixed;
@@ -3023,9 +3065,18 @@ font-family: 'Playfair Display', serif;
 		animation-direction: reverse;
 	}
 
+	#introtitle.stickyhead span {
+		opacity: 0;
+		animation-name: navbar;
+		animation-duration: 0.31s;
+		animation-iteration-count: 1;
+		animation-direction: reverse;
+	}
+
+
 	/* smooth scroll with following content */
 	#introtitle.stickyhead + .content {
-		padding-top: 72px;
+		padding-top: 50px;
 	}
 
 	.content {
@@ -3035,7 +3086,7 @@ font-family: 'Playfair Display', serif;
 /* Intro body */
 
 #introbody {
-	margin-top: 2em;
+	margin-top: 5em;
 	padding: 16px;
 	padding-bottom: 48px;
 	font-weight: 400;
@@ -3055,7 +3106,7 @@ font-family: 'Playfair Display', serif;
 #introbody a {
 	margin: 0;
 	font-weight: 600;
-	text-decoration: none;
+	text-decoration: underline;
 	color: #f4f5f6;
 	background: none;
 	mix-blend-mode: none;
@@ -3065,6 +3116,7 @@ font-family: 'Playfair Display', serif;
 	color: #0B0A09;
 	background: #f4f5f6;
 	mix-blend-mode: screen;
+	text-decoration: none;
 }
 
 #introbody div {
@@ -3136,7 +3188,7 @@ font-family: 'Playfair Display', serif;
 		top: 0;
 		left: 0;
 		right: 0;
-		z-index: 101;
+		z-index: 99; /* 101 when stickyhead is working */
 		height: 3em;
 		line-height: 3em;
 		margin-top: 0;
@@ -3152,6 +3204,8 @@ font-family: 'Playfair Display', serif;
 		margin-left: -16px;
 	}
 
+/* Not working for now
+
 	#researchtitle.stickyhead {
 		position: fixed;
 		top: 0;
@@ -3160,10 +3214,18 @@ font-family: 'Playfair Display', serif;
 	#researchtitle.stickyhead + .content {
 		padding-top: 73px;
 	}
+*/
+
+	#researchintro {
+		margin-top: 2em;
+		margin-bottom: 0em;
+		padding: 16px;
+	}
 
 	#researchbody {
-		margin-top: 2em;
+		margin-top: 0em;
 		padding: 16px;
+		display: none;
 	}
 
 	#researchbody ul {
@@ -3175,6 +3237,10 @@ font-family: 'Playfair Display', serif;
 	#researchbody ul li {
 		padding: 8px 0 8px 0;
 		margin-left: 32px;
+	}
+
+	#researchbodyexpand:target {
+		display: block;
 	}
 
 	#researchfooter {
@@ -3195,13 +3261,12 @@ font-family: 'Playfair Display', serif;
 	}
 
 	#researchfooter h2 {
-		padding: 10px 0 0 0;
+		padding: 7px 16px 3px 16px;
+		margin-left: -16px;
 		color: #f4f5f6;
-		font-weight: 400;
-		letter-spacing: 2px;
 	}
 
-
+/* Not working for now
 	#researchfooter.unstickyhead {
 		background: none;
 		z-index: 101;
@@ -3210,6 +3275,10 @@ font-family: 'Playfair Display', serif;
 	#researchfooter.unstickyhead h2 {
 		color: #39454b;
 	}
+*/
+
+
+
 
 	/* aspen */
 
@@ -3244,14 +3313,36 @@ font-family: 'Playfair Display', serif;
 		color: #fff;
 	}
 
+
+
+
+
 		/* WHYAGE */
 
+	#whyage{
+		overflow: visible;
+		padding-top: 3em;
+		padding-bottom: 0;
+	}
+
+	#whyagetop {
+		margin-top: 0em;
+		margin-bottom: 0em;
+		padding: 16px;	
+	}
+
+	#whyagetop > div {
+		display:table-cell;
+		vertical-align: middle;
+	}
+		
 	#whyagetitle {
+		display: block;
 		position: relative;
 		top: 0;
 		left: 0;
 		right: 0;
-		z-index: 101;
+		z-index: 99; /* 101 when stickyhead is working */
 		height: 3em;
 		line-height: 3em;
 		margin-top: 0;
@@ -3263,9 +3354,11 @@ font-family: 'Playfair Display', serif;
 	}
 
 	#whyagetitle h2{
-		padding: 8px 16px 2px 16px;
+		padding: 8px 16px 2px 0px;
 		margin-left: -16px;
 	}
+
+/* Not working for now
 
 	#whyagetitle.stickyhead {
 		position: fixed;
@@ -3275,10 +3368,34 @@ font-family: 'Playfair Display', serif;
 	#whyagetitle.stickyhead + .content {
 		padding-top: 73px;
 	}
+*/
+
+#whyageintro {
+	margin-top: 2em;
+	display: block;
+}
+
+#whyagepic {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 33%;
+	padding: 0 0 0 32px;
+	height: 100%;
+}
+
+#whyagepic img {
+	width: 100%;
+	max-width: 1000px;
+	height: auto;
+}	
+
+
 
 	#whyagebody {
-		margin-top: 2em;
+		margin-top: 0;
 		padding: 16px;
+		display:none;
 	}
 
 	#whyagefooter {
@@ -3299,13 +3416,12 @@ font-family: 'Playfair Display', serif;
 	}
 
 	#whyagefooter h2 {
-		padding: 10px 0 0 0;
+		padding: 7px 16px 3px 16px;
+		margin-left: -16px;
 		color: #f4f5f6;
-		font-weight: 400;
-		letter-spacing: 2px;
 	}
 
-
+/* Not working for now
 	#whyagefooter.unstickyhead {
 		background: none;
 		z-index: 101;
@@ -3314,6 +3430,10 @@ font-family: 'Playfair Display', serif;
 	#whyagefooter.unstickyhead h2 {
 		color: #39454b;
 	}
+*/
+
+
+
 
 	/* chameleon */
 
@@ -3348,6 +3468,10 @@ font-family: 'Playfair Display', serif;
 		color: #fff;
 	}
 
+
+
+
+
 	/* Publications */
 
 	#pubs{
@@ -3361,7 +3485,7 @@ font-family: 'Playfair Display', serif;
 			top: 0;
 			left: 0;
 			right: 0;
-			z-index: 101;
+			z-index: 99; /* 101 when stickyhead is working */
 			height: 3em;
 			line-height: 3em;
 			margin-top: 0;
@@ -3371,12 +3495,14 @@ font-family: 'Playfair Display', serif;
 			font-weight: 400;
 			letter-spacing: 2px;
 		}
+
 	
 		#pubstitle h2{
 			padding: 8px 16px 2px 16px;
 			margin-left: -16px;
 		}
-	
+
+/* Not working for now
 		#pubstitle.stickyhead {
 			position: fixed;
 			top: 0;
@@ -3384,13 +3510,45 @@ font-family: 'Playfair Display', serif;
 	
 		#pubstitle.stickyhead + .content {
 			padding-top: 73px;
-		}
+*/
 	
 		#pubsbody {
 			margin-top: 2em;
 			padding: 16px;
 		}
-	
+		
+
+		#pubsbody ol {
+			margin: 0 0 0 1.5em;
+			padding: 0;
+			font-size: 0.8em;
+			font-weight: bold;
+			list-style-type: decimal;
+		} 
+		
+		#pubsbody ol li {
+			padding: 6px 6px 6px 6px;
+		}
+
+		#pubsbody ol li span {
+			font-weight: normal;
+		}
+
+		#pubsbody button {
+			font-size: 0.8em;
+			height: 1.5em;
+			line-height: 1.5em;
+		}
+
+		#pubslist {
+			width: 66%;
+			padding: 0 16px 0 0;
+		}
+
+		#pubslistmore {
+			display:none;
+		}
+
 		#pubsfooter {
 			color: #f4f5f6;
 			background: #f4f5f6;
@@ -3415,7 +3573,7 @@ font-family: 'Playfair Display', serif;
 			letter-spacing: 2px;
 		}
 	
-	
+/* 	Not working for now
 		#pubsfooter.unstickyhead {
 			background: none;
 			z-index: 101;
@@ -3425,7 +3583,11 @@ font-family: 'Playfair Display', serif;
 			color: #39454b;
 		}
 	
-		/* One */
+ */	
+ 
+ 
+ 
+ /* One */
 
 	#one {
 		overflow: visible;
@@ -3435,7 +3597,7 @@ font-family: 'Playfair Display', serif;
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
-}
+	}
 
 	#compadrelogos{
 		background-image: linear-gradient(to right, rgba(22, 88, 51, 1) 0%, rgba(13, 45, 82, 1) 100%);
@@ -3478,6 +3640,7 @@ font-family: 'Playfair Display', serif;
 		letter-spacing: 2px;
 	}
 
+/*  Not working for now
 	#onetitle.stickyhead {
 		position: fixed;
 		top: 0;
@@ -3495,10 +3658,57 @@ font-family: 'Playfair Display', serif;
 		padding-top: 73px;
 	}
 
+ */
 	#onebody {
-		margin-top: 3em;
-		padding: 16px;
+		margin-top: 0.5em;
+		padding: 32px 16px 16px 16px;
 		color: #39454b;
+	}
+
+	#onebody a {
+		color: #98c593;
+		background: none;
+		mix-blend-mode: initial;
+	}
+
+	#onetext a:hover {
+		color: #98c593;
+	}
+
+	#onetext hr {
+		border-top: solid 1px #39454b;
+	}
+
+	#onetext img {
+		display: block;
+	}
+
+	#onetext img.right {
+		float:right;
+		margin: 0 0 16px 16px;
+	}
+
+	#onetext img.left {
+		float:left;
+	}
+
+	#onetext button {
+		font-size: 0.8em;
+		height: 1.5em;
+		line-height: 1.5em;
+	}
+
+	#compadremore {
+		display:none;
+	}
+
+	#urbanintro {
+		text-align: right;
+	}
+
+	#urbanmore {
+		display:none;
+		text-align: right;
 	}
 
 	#onefooter {
@@ -3525,7 +3735,7 @@ font-family: 'Playfair Display', serif;
 		letter-spacing: 2px;
 	}
 
-
+/* Not working for now
 	#onefooter.unstickyhead {
 		background: none;
 		z-index: 101;
@@ -3534,6 +3744,9 @@ font-family: 'Playfair Display', serif;
 	#onefooter.unstickyhead h2 {
 		color: #39454b;
 	}
+*/
+
+
 
 /* Software */
 
@@ -3545,6 +3758,12 @@ font-family: 'Playfair Display', serif;
 	background-size: 256px 256px, cover;
 	background-attachment: fixed, fixed;
 	background-position: top left, center center;
+}
+
+#software a {
+	color: #98c593;
+	background: none;
+	mix-blend-mode: initial;
 }
 
 #softwaretitle {
@@ -3568,6 +3787,7 @@ font-family: 'Playfair Display', serif;
 	letter-spacing: 2px;
 }
 
+/* Not working for now
 #softwaretitle.stickyhead {
 	position: fixed;
 	top: 0;
@@ -3584,6 +3804,7 @@ font-family: 'Playfair Display', serif;
 #softwaretitle.stickyhead + .content {
 	padding-top: 73px;
 }
+*/
 
 #softwarebody {
 	margin-top: 2em;
@@ -3602,7 +3823,14 @@ font-family: 'Playfair Display', serif;
 	text-align: justify;
 	margin-bottom: 0;
 }
-
+/*
+#softwarelogoslist ul {
+	overflow-x:hidden;
+	white-space:nowrap; 
+	width: 100%;
+	height: 1em;
+}
+*/
 #softwarelogoslist li {
 	display: inline-block;
 	vertical-align: middle;
@@ -3610,8 +3838,8 @@ font-family: 'Playfair Display', serif;
 
 #softwarelogoslist li img {
 	height: 40px;
-	padding-left: 5px;
-	padding-right: 5px;
+	padding-left: 3px;
+	padding-right: 3px;
 }
 
 #softwarelogoslist:after {
@@ -3619,6 +3847,16 @@ font-family: 'Playfair Display', serif;
 	width: 100%; /* Ensures justification for single lines */
 	display: inline-block;
   }
+
+#software ul {
+	margin: 0 0 0 1.5em;
+	padding: 0;
+	font-size: 0.8em;
+} 
+
+#software ul li {
+	padding: 6px 6px 6px 6px;
+}
 
 #softwarefooter {
 	color: #f4f5f6;
@@ -3644,7 +3882,7 @@ font-family: 'Playfair Display', serif;
 	letter-spacing: 2px;
 }
 
-
+/* Not working for now
 #softwarefooter.unstickyhead {
 	background: none;
 	z-index: 101;
@@ -3653,6 +3891,8 @@ font-family: 'Playfair Display', serif;
 #softwarefooter.unstickyhead h2 {
 	color: #39454b;
 }
+*/
+
 
 
 /* Teaching */
@@ -3668,7 +3908,7 @@ font-family: 'Playfair Display', serif;
 		top: 0;
 		left: 0;
 		right: 0;
-		z-index: 101;
+		z-index: 99; /* 101 when stickyhead is working */
 		height: 3em;
 		line-height: 3em;
 		margin-top: 0;
@@ -3684,6 +3924,7 @@ font-family: 'Playfair Display', serif;
 		margin-left: -16px;
 	}
 
+/* Not working for now
 	#teachingtitle.stickyhead {
 		position: fixed;
 		top: 0;
@@ -3692,10 +3933,37 @@ font-family: 'Playfair Display', serif;
 	#teachingtitle.stickyhead + .content {
 		padding-top: 73px;
 	}
+*/
 
 	#teachingbody {
 		margin-top: 2em;
 		padding: 16px;
+		overflow: hidden;
+	}
+
+	#teachingbody ul {
+		margin: 0 0 0 32px;
+	}
+
+	#teachinglist {
+		width: 66%;
+		float: right;
+		padding: 0 0 0 21px;
+	}
+
+	#teachinglist table {
+		font-size: 0.8em;
+	}
+
+	#teachinglist table tr td {
+		padding: 6px 6px 6px 6px;
+	}
+
+
+	#teachinglist tr td:first-child {
+		font-weight: bold;
+		text-align: right;
+		padding-left: 0;
 	}
 
 	#teachingfooter {
@@ -3722,7 +3990,7 @@ font-family: 'Playfair Display', serif;
 		letter-spacing: 2px;
 	}
 
-
+/* Not working for now
 	#teachingfooter.unstickyhead {
 		background: none;
 		z-index: 101;
@@ -3731,21 +3999,27 @@ font-family: 'Playfair Display', serif;
 	#teachingfooter.unstickyhead h2 {
 		color: #39454b;
 	}
+*/
 
 
 
+/* E & D */
 
-	/* E & D */
+#EandD {
+	overflow: visible;
+	padding-top: 3em;
+	padding-bottom: 3em;
+	background: url("images/overlay.png"), url("../../images/rainbow1.jpg");
+	background-size: 256px 256px, cover;
+	background-attachment: fixed, fixed;
+	background-position: top left, center center;
+}
 
-	#EandD {
-		overflow: visible;
-		padding-top: 3em;
-		padding-bottom: 3em;
-		background: url("images/overlay.png"), url("../../images/rainbow1.jpg");
-		background-size: 256px 256px, cover;
-		background-attachment: fixed, fixed;
-		background-position: top left, center center;
-	}
+#EandD a {
+	color: #39354b;
+	background: none;
+	mix-blend-mode: initial;
+}
 
 	#EandDtitle {
 		position: relative;
@@ -3768,6 +4042,7 @@ font-family: 'Playfair Display', serif;
 		letter-spacing: 2px;
 	}
 
+/*  Not working for now
 	#EandDtitle.stickyhead {
 		position: fixed;
 		top: 0;
@@ -3784,11 +4059,33 @@ font-family: 'Playfair Display', serif;
 	#EandDtitle.stickyhead + .content {
 		padding-top: 73px;
 	}
+*/
+	#EandD button {
+		font-size: 0.8em;
+		height: 1.5em;
+		line-height: 1.5em;
+	}
+
+	#EandD ul {
+		margin: 0 0 0 1.5em;
+		padding: 0;
+		font-size: 0.8em;
+	} 
+	
+	#EandD ul li {
+		padding: 6px 6px 6px 6px;
+	}
 
 	#EandDbody {
 		margin-top: 2em;
 		padding: 16px;
 	}
+
+	#EandDmore {
+		display: none;
+	}
+
+
 
 	.wrapper { 
 		height: 4em;
@@ -3798,9 +4095,9 @@ font-family: 'Playfair Display', serif;
 		background-size: 1800% 1800%;
 	  
 	  -webkit-animation: rainbow 18s ease infinite;
-	  -z-animation: rainbow 120s ease infinite;
-	  -o-animation: rainbow 120s ease infinite;
-		animation: rainbow 120s ease infinite;}
+	  -moz-animation: rainbow 50s ease infinite;
+	  -o-animation: rainbow 50s ease infinite;
+		animation: rainbow 50s ease infinite;}
 	  
 	  @-webkit-keyframes rainbow {
 		  0%{background-position:0% 82%}
@@ -3847,7 +4144,7 @@ font-family: 'Playfair Display', serif;
 		letter-spacing: 2px;
 	}
 
-
+/* Not working for now
 	#EandDfooter.unstickyhead {
 		background: none;
 		z-index: 101;
@@ -3856,22 +4153,25 @@ font-family: 'Playfair Display', serif;
 	#EandDfooter.unstickyhead h2 {
 		color: #39454b;
 	}
+*/
+
 
 
 /* CV */
 
-	#CV {
-	overflow: visible;
-	padding-top: 0;
-	padding-bottom: 0;
-	}
+/*
+#CV {
+overflow: visible;
+padding-top: 0;
+padding-bottom: 0;
+}
 
 	#CVtitle {
 		position: relative;
 		top: 0;
 		left: 0;
 		right: 0;
-		z-index: 101;
+		z-index: 99; /* 101 when stickyhead is working
 		height: 3em;
 		line-height: 3em;
 		margin-top: 0;
@@ -3888,6 +4188,7 @@ font-family: 'Playfair Display', serif;
 		margin-left: -16px;
 	}
 
+/* Not working for now
 	#CVtitle.stickyhead {
 		position: fixed;
 		top: 0;
@@ -3944,8 +4245,7 @@ font-family: 'Playfair Display', serif;
 			font-weight: 400;
 			letter-spacing: 2px;
 		}
-	
-	
+ Not working for now
 		#CVfooter.unstickyhead {
 			background: none;
 			z-index: 101;
@@ -3954,8 +4254,11 @@ font-family: 'Playfair Display', serif;
 		#CVfooter.unstickyhead h2 {
 			color: #39454b;
 		}
-		
-	/*Contact me*/
+ */
+ 
+ 
+ 
+ /*Contact me*/
 
 	#contact{
 		position: absolute;
@@ -4342,6 +4645,16 @@ font-family: 'Playfair Display', serif;
 
 			/* Contact */
 
+			/* Make space at the bottom of introtext */
+
+			#introbody {
+				padding-bottom: 72px;
+			}
+
+			#contact{
+				text-align: center;
+			}
+
 			#contact ul li a {
 				font-size: 1.75em;
 			}
@@ -4398,6 +4711,26 @@ font-family: 'Playfair Display', serif;
 				line-height: 1.5em;
 			}
 
+			.textboxright {
+				border-left: none;
+				float: none;
+				width: 100%; 
+				margin: 0;
+				padding-left: 0;
+				padding-bottom: 16px;
+				text-align: center;
+			}
+	
+			.textboxleft {
+				border-right: none;
+				float: none;
+				width: 100%; 
+				margin: 0;
+				padding-right: 0;
+				padding-bottom: 16px;
+				text-align: center;
+			}
+			
 		/* Sections */
 
 		#introbody div {
@@ -4413,6 +4746,20 @@ font-family: 'Playfair Display', serif;
 			padding: 0;
 		}
 
+		#whyagetop > div {
+			display: block;
+		}
+
+		#whyagepic {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 32px;
+			width: 60%;
+			padding: 0;
+		}
+
+
 		#aspen {
 			min-height: 25%;
 		}
@@ -4421,6 +4768,13 @@ font-family: 'Playfair Display', serif;
 			min-height: 25%;
 		}
 
+		#pubslist {
+			text-align: left;
+		}
+
+		#teachinglist{
+			text-align: left;
+		}
 		
 		/* Titles */
 
@@ -4443,6 +4797,17 @@ font-family: 'Playfair Display', serif;
 			padding-top:15px;
 		}
 
+		/* pubs */
+
+		#pubslist {
+			width: 100%;
+		}
+
+		#teachinglist {
+			width:100%
+		}
+
+/* Not working for now
 		#researchtitle {
 			z-index: 99;
 		}
@@ -4500,11 +4865,12 @@ font-family: 'Playfair Display', serif;
 		#softwaretitle.stickyhead + .content {
 			padding-top: 15px;
 		}
-
+*/
 		#softwarelogoslist{
 			text-align: center;
 		}
 
+/* Not working for now
 		#teachingtitle {
 			z-index: 99;
 		}
@@ -4514,8 +4880,6 @@ font-family: 'Playfair Display', serif;
 		#teachingtitle.stickyhead + .content {
 			padding-top:15px;
 		}
-
-
 
 		#EandDtitle {
 			z-index: 99;
@@ -4540,8 +4904,9 @@ font-family: 'Playfair Display', serif;
 		#CVtitle.stickyhead + .content {
 			padding-top:15px;
 		}
-
-		/* Content */
+ */		
+		 
+ 		/* Content */
 		#linkscreen a {
 			display: none;
 		}
@@ -4555,6 +4920,7 @@ font-family: 'Playfair Display', serif;
 
 		/* Footers */
 
+/* Not working for now
 		#researchfooter.unstickyhead h2 {
 			opacity:0;
 		}
@@ -4584,7 +4950,7 @@ font-family: 'Playfair Display', serif;
 		#CVfooter.unstickyhead h2 {
 			opacity:0;
 		}
-
+*/
 
 		/* Box */
 
